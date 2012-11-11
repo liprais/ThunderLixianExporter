@@ -34,7 +34,7 @@ TLE.exporter = {
     var str = "";
     $.each(todown.tasklist, function(n, task) {
       $.each(task.filelist, function(l, file) {
-        if (file.downurl) str += "wget -c -O "+TLE.escape_command(file.title)+" --header 'Cookie: gdriveid="+todown.gdriveid+";' '"+file.downurl+"'\n";
+        if (file.downurl) str += "wget -c -b -O "+TLE.escape_command(file.title)+" --header 'Cookie: gdriveid="+todown.gdriveid+";' '"+file.downurl+"'\n";
       });
     });
     TLE.text_pop("wget download command", str);
